@@ -1,0 +1,2 @@
+The files in this directory were the background files for development of the genalgo.py code. They are here for educational purposes
+Plus they can be used as starting points to develop other code from.
