@@ -26,10 +26,36 @@ import genalgo
    - Stochastic algorithm as a sanity check: The stochastic algorithm can be used as a quick check to ensure that the code is functioning properly before running the more computationally expensive genetic algorithm.
    - Flexible input parameters: The genetic algorithm's input parameters can be adjusted to optimize performance for the specific problem being solved.
    - Bounds: Bounds can be set on the search range.
-   - Rates - Mutation rates can be asjusted along with a type of annealling that looks for when the population has become too stagnant and requires a slight shakeup by dithering the values around. The idea that inspired this is simulated annealing and also a cat breeding example... I happened to remember a story about farmers having barn cats and once and a long while they have to do a cat exchange with another farmer to shake up the genetics a bit or else the offspring settles down to an unfit level.
+   - Rates - Mutation rates can be adjusted along with a type of annealling that looks for when the population has become too stagnant and requires a slight shakeup by dithering the values around. The idea that inspired this is simulated annealing and also a cat breeding example... I happened to remember a story about farmers having barn cats and once and a long while they have to do a cat exchange with another farmer to shake up the genetics a bit or else the offspring settles down to an unfit level.
    - Min or Max Optimization - Can optimize for a maximum value or minimum value.
    - Best Parameter in [0] - The best performing parameter is always bubbled into the [0] position for ease of use and visual confirmation when looking at the array.
    - Uniform or Gaussian random mutations.
+   
+
+## Adjustable Parameters
+- pop: The population optional passed from outside the fxn by loading using the read pop fxn.- 
+- bounds: The bounds are the lower and upper values for the search. Normalizes the serach to the data range.
+
+- opt_for_min: The default mode is True to optimize for a minimum, like error. Can be set False to optimize for Maximum.
+
+- pop_init_len: population size to initialize to, stays constant once initialized.
+
+- loops : How many times to loop through the ga.*Alternatively, allow breakout early based on convergance of delta value of best parameter, break on a value less than a threshold.*
+                
+- optimization_threshold: Hyperparameter, when non zero it is the value of delta best parameter at which to early the code early as it has optimized enough.
+        
+- warmup_loops: Defaults to 10, number of loops to run before allowing early breakout on optimization.
+
+- smoothing_const: The Rate of decay for the EMA that calculates the best parameter, default = 0.1.
+
+- run_ga_code: By default the GA algorithm is run, if this is set or passed as False then the SA,
+                Stochastic Algorithm is run, mostly for a demo and to use as a sanity check. Lets say running the 
+                GA code is giving weird results or a warmup test is needed to just get going. Getting an optimization
+                up and running or debugged with the SA code means less hyperparams to worry about and when it works 
+                with SA than goto GA (again) to adjust hyperparameters.
+
+- verbose: Turns on verbose messaging, mostly for debug. Turned off means less printed info when the epochs run.
+
 
 ## Contents
 * **genalgo.py** - is the code that can be imported as a module to perform optimization using a genetic algorithm.
