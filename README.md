@@ -30,6 +30,7 @@ import genalgo
    - Min or Max Optimization - Can optimize for a maximum value or minimum value.
    - Best Parameter in [0] - The best performing parameter is always bubbled into the [0] position for ease of use and visual confirmation when looking at the array.
    - Uniform or Gaussian random mutations.
+   - Ability to store and load the population as a JSON file. This enables repeated optimizations such as re-optimizing on time series data that changes or backtested data that gets updated periodically.
    
 
 ## Adjustable Parameters
